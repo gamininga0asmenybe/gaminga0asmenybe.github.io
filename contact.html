@@ -159,41 +159,73 @@
 
         </div>
 
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
-          <div class="row gy-4">
+ <form id="contactForm" data-aos="fade-up" data-aos-delay="600">
+  <div class="row gy-4">
 
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-            </div>
+    <div class="col-md-6">
+      <input type="text" id="fname" class="form-control" placeholder="Vardas">
+      <div class="error-text"></div>
+    </div>
 
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-            </div>
+    <div class="col-md-6">
+      <input type="text" id="lname" class="form-control" placeholder="Pavardė">
+      <div class="error-text"></div>
+    </div>
 
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-            </div>
+    <div class="col-md-6">
+      <input type="email" id="email" class="form-control" placeholder="El. paštas">
+      <div class="error-text"></div>
+    </div>
 
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-            </div>
+    <div class="col-md-6">
+      <input type="text" id="phone" class="form-control" placeholder="Telefono numeris">
+      <div class="error-text"></div>
+    </div>
 
-            <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
+    <div class="col-md-12">
+      <input type="text" id="address" class="form-control" placeholder="Adresas">
+      <div class="error-text"></div>
+    </div>
 
-              <button type="submit">Send Message</button>
-            </div>
+    <div class="col-md-4">
+      <input type="number" id="q1" class="form-control" placeholder="Ar esate laimingi? (1–10)" min="1" max="10">
+      <div class="error-text"></div>
+    </div>
 
-          </div>
-        </form><!-- End Contact Form -->
+    <div class="col-md-4">
+      <input type="number" id="q2" class="form-control" placeholder="Kaip vertinate puslapį? (1–10)" min="1" max="10">
+      <div class="error-text"></div>
+    </div>
 
-      </div>
+    <div class="col-md-4">
+      <input type="number" id="q3" class="form-control" placeholder="Ar mus rekomenduotumėte? (1–10)" min="1" max="10">
+      <div class="error-text"></div>
+    </div>
 
-    </section><!-- /Contact Section -->
+
+        <div class="col-md-12">
+      <div id="popup" class="popup"></div>
+    </div>
+    <div class="col-md-12 text-center">
+  <button id="submitBtn" type="submit" disabled>Submit</button>
+</div>
+
+<div class="col-md-12" id="results"></div>
+
+<div class="col-md-12">
+  <div id="popup" class="popup"></div>
+</div>
+
+
+  </div>
+</form>
+<!-- End Contact Form -->
+
+      </div> <!-- .container -->
+    </section> <!-- #contact -->
 
   </main>
+
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
@@ -241,6 +273,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 

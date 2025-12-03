@@ -273,3 +273,23 @@ button,.btn,.btn-primary,.btn-outline-primary{
     transform: none !important;
   }
 }
+
+.form-control.error {
+  border: 2px solid #ff4d4d !important;
+}
+
+.error-text {
+  font-size: 13px;
+  color: #ff4d4d;
+  margin-top: -8px;
+  margin-bottom: 5px;
+}
+
+.popup {
+  display: none;
+  padding: 12px;
+  background: #149414;
+  border-left: 4px solid #430449;
+  font-weight: 500;
+  margin-top: 10px;
+}
