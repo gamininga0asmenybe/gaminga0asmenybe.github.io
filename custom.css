@@ -119,7 +119,7 @@ button,.btn,.btn-primary,.btn-outline-primary{
 .portfolio .portfolio-content,
 .about .content,
 .card, .shadow-box{
-  border: 1px solid #e5e7eb;
+  border: 2px solid #08338a;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   background: var(--surface);
@@ -292,4 +292,145 @@ button,.btn,.btn-primary,.btn-outline-primary{
   border-left: 4px solid #430449;
   font-weight: 500;
   margin-top: 10px;
+}
+
+/* 3) Memory game – Flip Card Memory */
+
+.memory-game-section {
+  padding-top: 40px;
+}
+
+.memory-game-section .section-title p {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.game-controls {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.game-controls h3,
+.game-controls h4 {
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+.game-stats p,
+.game-best p {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.game-board {
+  display: grid;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Lengvas režimas 4x3 */
+.game-board.easy {
+  grid-template-columns: repeat(4, minmax(60px, 1fr));
+}
+
+/* Sunkus režimas 6x4 */
+.game-board.hard {
+  grid-template-columns: repeat(6, minmax(60px, 1fr));
+}
+
+.memory-card {
+  perspective: 800px;
+  cursor: pointer;
+}
+
+.memory-card-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 120%; /* kad kortelė būtų stačiakampė */
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.memory-card-front,
+.memory-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+/* Priekinė pusė – „užversta“ kortelė */
+.memory-card-front {
+  background: var(--surface-2);
+}
+
+/* Galinė pusė – ikona */
+.memory-card-back {
+  background: var(--brand-2);
+  transform: rotateY(180deg);
+  font-size: 2rem;
+}
+
+/* Apversta kortelė */
+.memory-card.flipped .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Sutapusi pora */
+.memory-card.matched {
+  cursor: default;
+  opacity: 0.85;
+}
+
+.memory-card.matched .memory-card-inner {
+  box-shadow: 0 0 0 2px var(--brand);
+}
+
+/* Laimėjimo / informacinis tekstas */
+.game-message {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.game-message.win {
+  color: #149414;
+}
+
+.game-message.info {
+  color: var(--muted);
+}
+
+/* Responsyvu */
+@media (max-width: 768px) {
+  .game-board.easy {
+    grid-template-columns: repeat(3, minmax(70px, 1fr));
+  }
+
+  .game-board.hard {
+    grid-template-columns: repeat(4, minmax(60px, 1fr));
+  }
+}
+
+/* Sudėtingumas label spalva */
+.memory-game-section .difficulty-group label {
+  color: var(--brand);   /* tamsiai rožinė iš tavo temos */
+  font-weight: 600;
+}
+
+.memory-card-back {
+  background: var(--brand-2);
+  transform: rotateY(180deg);
+  font-size: 2rem;
+}
+
+/* Ikonos spalva kortelės viduje */
+.memory-card-back i {
+  color: var(--brand);   /* tamsiai rožinė ikona */
 }
